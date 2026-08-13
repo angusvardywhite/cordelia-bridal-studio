@@ -99,7 +99,7 @@ function revealLogoDot() {
     return;
   }
 
-  const fallback = window.setTimeout(reveal, 2800);
+  const fallback = window.setTimeout(reveal, 2393);
   penPath?.addEventListener(
     "animationend",
     () => {

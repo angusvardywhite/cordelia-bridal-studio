@@ -149,12 +149,12 @@ img {
   stroke-linejoin: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: trace-logo 2.58s 0.05s linear forwards;
+  animation: trace-logo 2.205s 0.043s linear forwards;
 }
 
 .brand-script-dot {
   opacity: 0;
-  animation: reveal-logo-dot 0.01s 2.63s steps(1, end) forwards;
+  animation: reveal-logo-dot 0.009s 2.248s steps(1, end) forwards;
 }
 
 .brand-script-dot.is-visible {
