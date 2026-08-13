@@ -20,23 +20,14 @@ body {
   position: relative;
   margin: 0;
   color: var(--ink);
-  background: var(--paper);
+  background-color: var(--paper);
+  background-image: url("/assets/textures/paper-fibres-v2.webp");
+  background-size: 96rem 64rem;
+  background-blend-mode: multiply;
   font-family: var(--font-paragraph);
   font-size: 1rem;
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;
-}
-
-body::before {
-  position: absolute;
-  inset: 0;
-  z-index: 20;
-  pointer-events: none;
-  content: "";
-  opacity: 0.34;
-  background-image: url("/assets/textures/paper-fibres.webp");
-  background-size: 57.6rem 38.4rem;
-  mix-blend-mode: multiply;
 }
 
 a {
