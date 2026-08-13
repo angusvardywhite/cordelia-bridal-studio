@@ -30,6 +30,8 @@ collections:
         fields:
           - { label: Main heading, name: hero_heading, widget: string }
           - { label: Intro text, name: hero_text, widget: text }
+          - { label: About heading, name: about_heading, widget: string }
+          - { label: About text, name: about_text, widget: text }
           - { label: Gallery heading, name: gallery_heading, widget: text }
           - { label: Gallery text, name: gallery_text, widget: text }
           - { label: Contact heading, name: contact_heading, widget: string }

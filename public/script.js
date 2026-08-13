@@ -2,6 +2,9 @@ const fallbackContent = {
   hero_heading: "Made for the woman, not the moment.",
   hero_text:
     "An intimate bridal studio for dresses with presence, instinct and a point of view.",
+  about_heading: "A studio for dresses with a point of view.",
+  about_text:
+    "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of choosing a dress made to feel entirely your own.",
   gallery_heading: "The dresses,\nas they arrive.",
   gallery_text:
     "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
@@ -62,6 +65,8 @@ function renderDresses(dresses) {
 function applyContent(content) {
   setText("hero-heading", content.hero_heading);
   setText("hero-text", content.hero_text);
+  setText("about-heading", content.about_heading);
+  setText("about-text", content.about_text);
   setText("gallery-heading", content.gallery_heading);
   setText("gallery-text", content.gallery_text);
   setText("contact-heading", content.contact_heading);
