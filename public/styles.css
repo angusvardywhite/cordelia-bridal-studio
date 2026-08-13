@@ -222,8 +222,8 @@ footer {
 
 .hero-copy h1 {
   max-width: 12ch;
-  font-size: clamp(3.2rem, 7vw, 7.8rem);
-  line-height: 0.92;
+  font-size: clamp(2.7rem, 5.8vw, 6.2rem);
+  line-height: 0.95;
 }
 
 .hero-copy > p {
@@ -245,7 +245,7 @@ footer {
   max-width: 11ch;
   margin: 0;
   font-family: var(--font-heading);
-  font-size: clamp(3.25rem, 7.6vw, 8rem);
+  font-size: clamp(2.7rem, 5.9vw, 6.2rem);
   font-weight: 400;
   line-height: 0.9;
   letter-spacing: 0.015em;
@@ -271,7 +271,7 @@ footer {
 }
 
 .gallery-intro h2 {
-  font-size: clamp(3.25rem, 7.6vw, 8rem);
+  font-size: clamp(2.7rem, 5.9vw, 6.2rem);
   line-height: 0.9;
 }
 
@@ -380,8 +380,8 @@ footer {
 
 .contact-copy h2 {
   max-width: 8ch;
-  font-size: clamp(4rem, 9vw, 10rem);
-  line-height: 0.86;
+  font-size: clamp(3rem, 6.5vw, 7rem);
+  line-height: 0.9;
 }
 
 .contact-copy p {
@@ -390,26 +390,24 @@ footer {
   font-size: clamp(1rem, 1.5vw, 1.25rem);
 }
 
-.email-link {
+.contact-links {
   grid-column: 1 / -1;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 1rem;
+  display: grid;
   align-self: end;
-  padding: 1.4rem 0 0.9rem;
-  border-top: 1px solid var(--ink);
-  font-size: clamp(1rem, 2.5vw, 2.35rem);
-  letter-spacing: 0.02em;
-  text-decoration: none;
 }
 
-.email-link span:first-child {
+.contact-link {
+  display: block;
+  padding: 1.15rem 0 0.85rem;
+  border-top: 1px solid var(--ink);
+  font-size: clamp(1rem, 2.1vw, 2rem);
+  letter-spacing: 0.02em;
+  text-decoration: none;
   overflow-wrap: anywhere;
 }
 
-.email-link:hover,
-.email-link:focus-visible {
+.contact-link:hover,
+.contact-link:focus-visible {
   padding-inline: 0.8rem;
   color: var(--paper);
   background: var(--ink);
@@ -516,7 +514,7 @@ footer {
     min-height: 34rem;
   }
 
-  .email-link {
+  .contact-links {
     grid-column: 1;
   }
 
