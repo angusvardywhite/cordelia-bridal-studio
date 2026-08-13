@@ -1,13 +1,9 @@
 const fallbackContent = {
-  hero_eyebrow: "Cordelia Bridal Studio",
   hero_heading: "Made for the woman, not the moment.",
   hero_text:
     "An intimate bridal studio for dresses with presence, instinct and a point of view.",
-  statement_heading: "Softly spoken.\nImpossible to overlook.",
-  statement_text:
-    "Modern bridalwear shaped around the person wearing it - considered, expressive and entirely her own.",
-  collection_heading: "The dresses,\nas they arrive.",
-  collection_text:
+  gallery_heading: "The dresses,\nas they arrive.",
+  gallery_text:
     "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
   contact_heading: "Begin your fitting.",
   contact_text: "Tell us a little about you, your date, and the dress you have not found yet.",
@@ -15,7 +11,7 @@ const fallbackContent = {
     image: "",
     alt: "",
     name: `No. ${String(index + 1).padStart(2, "0")}`,
-    caption: "Reserved for the collection",
+    caption: "Reserved for the gallery",
   })),
 };
 
@@ -64,13 +60,10 @@ function renderDresses(dresses) {
 }
 
 function applyContent(content) {
-  setText("hero-eyebrow", content.hero_eyebrow);
   setText("hero-heading", content.hero_heading);
   setText("hero-text", content.hero_text);
-  setText("statement-heading", content.statement_heading);
-  setText("statement-text", content.statement_text);
-  setText("collection-heading", content.collection_heading);
-  setText("collection-text", content.collection_text);
+  setText("gallery-heading", content.gallery_heading);
+  setText("gallery-text", content.gallery_text);
   setText("contact-heading", content.contact_heading);
   setText("contact-text", content.contact_text);
   renderDresses(Array.isArray(content.dresses) ? content.dresses : fallbackContent.dresses);

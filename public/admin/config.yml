@@ -28,13 +28,10 @@ collections:
         file: public/content/site.json
         format: json
         fields:
-          - { label: Intro label, name: hero_eyebrow, widget: string }
           - { label: Main heading, name: hero_heading, widget: string }
           - { label: Intro text, name: hero_text, widget: text }
-          - { label: Studio heading, name: statement_heading, widget: text }
-          - { label: Studio text, name: statement_text, widget: text }
-          - { label: Collection heading, name: collection_heading, widget: text }
-          - { label: Collection text, name: collection_text, widget: text }
+          - { label: Gallery heading, name: gallery_heading, widget: text }
+          - { label: Gallery text, name: gallery_text, widget: text }
           - { label: Contact heading, name: contact_heading, widget: string }
           - { label: Contact text, name: contact_text, widget: text }
           - label: Dress spaces

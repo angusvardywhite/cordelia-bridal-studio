@@ -32,12 +32,9 @@ body::before {
   z-index: 20;
   pointer-events: none;
   content: "";
-  opacity: 0.3;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.7) 0 0.55px, transparent 0.8px),
-    radial-gradient(circle at 75% 68%, rgba(17, 31, 43, 0.22) 0 0.45px, transparent 0.75px),
-    repeating-linear-gradient(102deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 7px);
-  background-size: 4px 4px, 5px 5px, 19px 19px;
+  opacity: 0.34;
+  background-image: url("/assets/textures/paper-fibres.webp");
+  background-size: 57.6rem 38.4rem;
   mix-blend-mode: multiply;
 }
 
@@ -95,7 +92,6 @@ img {
   text-transform: uppercase;
 }
 
-.word-link,
 .site-header nav a {
   display: inline-block;
   padding-block: 0.5rem;
@@ -108,15 +104,14 @@ img {
   gap: clamp(0.8rem, 2.4vw, 2.25rem);
 }
 
-.word-link:hover,
 .site-header nav a:hover,
-.word-link:focus-visible,
 .site-header nav a:focus-visible {
   text-decoration: underline;
   text-underline-offset: 0.35rem;
 }
 
 .brand {
+  grid-column: 2;
   justify-self: center;
   width: min(100%, 17rem);
   padding: 0;
@@ -134,6 +129,10 @@ img {
   height: auto;
 }
 
+.site-header nav {
+  grid-column: 3;
+}
+
 .hero {
   position: relative;
   display: grid;
@@ -143,7 +142,6 @@ img {
   padding: clamp(4.5rem, 10vw, 9.5rem) var(--page-pad) clamp(6rem, 12vw, 11rem);
 }
 
-.eyebrow,
 .section-label,
 .space-note,
 .hero-index,
@@ -153,13 +151,6 @@ footer {
   font-size: 0.65rem;
   letter-spacing: 0.19em;
   text-transform: uppercase;
-}
-
-.eyebrow {
-  position: absolute;
-  top: clamp(2rem, 5vw, 4.5rem);
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .image-space {
@@ -217,8 +208,7 @@ footer {
 }
 
 .hero-copy h1,
-.statement h2,
-.collection-intro h2,
+.gallery-intro h2,
 .contact h2 {
   margin: 0;
   font-family: var(--font-heading);
@@ -226,8 +216,7 @@ footer {
   letter-spacing: 0.015em;
 }
 
-.statement h2,
-.collection-intro h2 {
+.gallery-intro h2 {
   white-space: pre-line;
 }
 
@@ -257,49 +246,12 @@ footer {
   bottom: 2.4rem;
 }
 
-.statement {
-  position: relative;
-  min-height: 54rem;
-  padding: clamp(7rem, 15vw, 15rem) var(--page-pad);
-  border-block: 1px solid var(--rule);
-  text-align: center;
-  overflow: hidden;
-}
-
-.statement h2 {
-  position: relative;
-  z-index: 1;
-  margin-top: 3.75rem;
-  font-size: clamp(3.5rem, 10vw, 10.5rem);
-  line-height: 0.85;
-}
-
-.statement > p:not(.section-label) {
-  position: relative;
-  z-index: 1;
-  max-width: 36rem;
-  margin: 3.25rem auto 0;
-  font-size: clamp(1rem, 1.5vw, 1.25rem);
-}
-
-.statement-mark {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  color: transparent;
-  font-family: var(--font-heading);
-  font-size: min(67vw, 53rem);
-  font-weight: 300;
-  line-height: 0.7;
-  -webkit-text-stroke: 1px rgba(12, 12, 12, 0.1);
-  transform: translate(-50%, -50%);
-}
-
-.collection {
+.gallery-section {
   padding: clamp(7rem, 11vw, 12rem) var(--page-pad);
+  border-top: 1px solid var(--rule);
 }
 
-.collection-intro {
+.gallery-intro {
   display: grid;
   grid-template-columns: 0.6fr 1.4fr 0.85fr;
   gap: 2rem;
@@ -307,17 +259,17 @@ footer {
   margin-bottom: clamp(5rem, 10vw, 10rem);
 }
 
-.collection-intro h2 {
+.gallery-intro h2 {
   font-size: clamp(3.25rem, 7.6vw, 8rem);
   line-height: 0.9;
 }
 
-.collection-intro > p:last-child {
+.gallery-intro > p:last-child {
   max-width: 25rem;
   margin: 0 0 0.5rem;
 }
 
-.gallery {
+.dress-grid {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: clamp(2.5rem, 7vw, 7rem) clamp(1.25rem, 3vw, 3rem);
@@ -506,15 +458,6 @@ footer {
     padding-top: 1rem;
   }
 
-  .site-header .word-link {
-    font-size: 0;
-  }
-
-  .site-header .word-link::after {
-    content: "CBS";
-    font-size: 0.68rem;
-  }
-
   .site-header nav a:first-child {
     display: none;
   }
@@ -523,10 +466,6 @@ footer {
     grid-template-columns: 1fr;
     min-height: auto;
     padding-top: 6rem;
-  }
-
-  .eyebrow {
-    display: none;
   }
 
   .hero-space {
@@ -543,19 +482,15 @@ footer {
     display: none;
   }
 
-  .statement {
-    min-height: 39rem;
-  }
-
-  .collection-intro {
+  .gallery-intro {
     grid-template-columns: 1fr;
   }
 
-  .collection-intro > p:last-child {
+  .gallery-intro > p:last-child {
     margin-top: 1rem;
   }
 
-  .gallery {
+  .dress-grid {
     grid-template-columns: repeat(6, minmax(0, 1fr));
     row-gap: 5rem;
   }

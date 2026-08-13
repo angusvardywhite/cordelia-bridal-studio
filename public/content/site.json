@@ -1,11 +1,8 @@
 {
-  "hero_eyebrow": "Cordelia Bridal Studio",
   "hero_heading": "Made for the woman, not the moment.",
   "hero_text": "An intimate bridal studio for dresses with presence, instinct and a point of view.",
-  "statement_heading": "Softly spoken.\nImpossible to overlook.",
-  "statement_text": "Modern bridalwear shaped around the person wearing it - considered, expressive and entirely her own.",
-  "collection_heading": "The dresses,\nas they arrive.",
-  "collection_text": "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
+  "gallery_heading": "The dresses,\nas they arrive.",
+  "gallery_text": "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
   "contact_heading": "Begin your fitting.",
   "contact_text": "Tell us a little about you, your date, and the dress you have not found yet.",
   "dresses": [
@@ -13,49 +10,49 @@
       "image": "",
       "alt": "",
       "name": "No. 01",
-      "caption": "Reserved for the collection"
+      "caption": "Reserved for the gallery"
     },
     {
       "image": "",
       "alt": "",
       "name": "No. 02",
-      "caption": "Reserved for the collection"
+      "caption": "Reserved for the gallery"
     },
     {
       "image": "",
       "alt": "",
       "name": "No. 03",
-      "caption": "Reserved for the collection"
+      "caption": "Reserved for the gallery"
     },
     {
       "image": "",
       "alt": "",
       "name": "No. 04",
-      "caption": "Reserved for the collection"
+      "caption": "Reserved for the gallery"
     },
     {
       "image": "",
       "alt": "",
       "name": "No. 05",
-      "caption": "Reserved for the collection"
+      "caption": "Reserved for the gallery"
     },
     {
       "image": "",
       "alt": "",
       "name": "No. 06",
-      "caption": "Reserved for the collection"
+      "caption": "Reserved for the gallery"
     },
     {
       "image": "",
       "alt": "",
       "name": "No. 07",
-      "caption": "Reserved for the collection"
+      "caption": "Reserved for the gallery"
     },
     {
       "image": "",
       "alt": "",
       "name": "No. 08",
-      "caption": "Reserved for the collection"
+      "caption": "Reserved for the gallery"
     }
   ]
 }
