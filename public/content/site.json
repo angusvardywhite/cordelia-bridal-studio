@@ -3,36 +3,37 @@
   "dresses": [
     {
       "name": "Dress name",
-      "caption": "",
+      "caption": "A short description",
       "alt": "",
       "image": "/assets/uploads/112820idxsdl.jpg"
     },
     {
       "name": "Dress name",
-      "caption": "Reserved for the gallery",
+      "caption": "A short description",
       "image": "/assets/uploads/107600idxsdl.jpg"
     },
     {
       "name": "Dress name",
-      "caption": "Reserved for the gallery",
+      "caption": "A short description",
       "image": "/assets/uploads/112801idxsdl.jpg"
     },
     {
       "name": "Dress name",
-      "caption": "Reserved for the gallery",
+      "caption": "A short description",
       "image": ""
     },
     {
       "name": "Dress name",
-      "caption": "Reserved for the gallery"
+      "caption": "A short description"
     },
     {
       "name": "Dress name",
-      "caption": "Reserved for the gallery"
+      "caption": "A short description",
+      "image": "/assets/uploads/207960fgsdl.jpg"
     },
     {
       "name": "Dress name",
-      "caption": "Reserved for the gallery"
+      "caption": ""
     },
     {}
   ],
