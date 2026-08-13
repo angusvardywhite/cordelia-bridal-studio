@@ -1,0 +1,49 @@
+backend:
+  name: github
+  repo: angusvardywhite/cordelia-bridal-studio
+  branch: main
+  base_url: https://auth.cordeliabridalstudio.com
+  auth_endpoint: /auth
+  site_domain: cordeliabridalstudio.com
+  commit_messages:
+    create: "Content: create {{collection}} {{slug}}"
+    update: "Content: update {{collection}} {{slug}}"
+    delete: "Content: remove {{collection}} {{slug}}"
+    uploadMedia: "Content: add image {{path}}"
+    deleteMedia: "Content: remove image {{path}}"
+
+local_backend: true
+site_url: https://cordeliabridalstudio.com
+display_url: https://cordeliabridalstudio.com
+logo_url: /assets/brand/cordelia-logo-black.png
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+
+collections:
+  - name: pages
+    label: Website
+    files:
+      - name: home
+        label: Home page
+        file: public/content/site.json
+        format: json
+        fields:
+          - { label: Intro label, name: hero_eyebrow, widget: string }
+          - { label: Main heading, name: hero_heading, widget: string }
+          - { label: Intro text, name: hero_text, widget: text }
+          - { label: Studio heading, name: statement_heading, widget: text }
+          - { label: Studio text, name: statement_text, widget: text }
+          - { label: Collection heading, name: collection_heading, widget: text }
+          - { label: Collection text, name: collection_text, widget: text }
+          - { label: Contact heading, name: contact_heading, widget: string }
+          - { label: Contact text, name: contact_text, widget: text }
+          - label: Dress spaces
+            name: dresses
+            widget: list
+            summary: "{{fields.name}} — {{fields.caption}}"
+            minimize_collapsed: true
+            fields:
+              - { label: Dress image, name: image, widget: image, required: false }
+              - { label: Image description, name: alt, widget: string, required: false, hint: "Describe the dress for visitors using screen readers." }
+              - { label: Dress name, name: name, widget: string }
+              - { label: Small caption, name: caption, widget: string }
