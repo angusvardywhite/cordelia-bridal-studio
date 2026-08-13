@@ -142,19 +142,22 @@ img {
   pointer-events: none;
 }
 
-.logo-stroke {
+.logo-pen-path,
+.logo-pen-dot {
   fill: none;
   stroke: white;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
-  animation: trace-logo var(--duration) var(--delay) linear forwards;
 }
 
-.logo-mask-finish {
-  opacity: 0;
-  animation: finish-logo-mask 0.01s 2.67s steps(1, end) forwards;
+.logo-pen-path {
+  animation: trace-logo 2.58s 0.05s linear forwards;
+}
+
+.logo-pen-dot {
+  animation: trace-logo 0.09s 2.63s linear forwards;
 }
 
 .site-header nav {
@@ -447,12 +450,6 @@ footer {
   }
 }
 
-@keyframes finish-logo-mask {
-  to {
-    opacity: 1;
-  }
-}
-
 @keyframes draw-rule {
   to {
     transform: scaleX(1);
@@ -550,11 +547,8 @@ footer {
     transition-duration: 0.01ms !important;
   }
 
-  .logo-stroke {
+  .logo-pen-path,
+  .logo-pen-dot {
     stroke-dashoffset: 0;
-  }
-
-  .logo-mask-finish {
-    opacity: 1;
   }
 }
