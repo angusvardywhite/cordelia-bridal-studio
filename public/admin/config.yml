@@ -36,13 +36,14 @@ collections:
           - { label: Gallery text, name: gallery_text, widget: text }
           - { label: Contact heading, name: contact_heading, widget: string }
           - { label: Contact text, name: contact_text, widget: text }
-          - label: Dress spaces
+          - label: "Gallery photos & text"
             name: dresses
             widget: list
+            required: false
             summary: "{{fields.name}} — {{fields.caption}}"
             minimize_collapsed: true
             fields:
               - { label: Dress image, name: image, widget: image, required: false }
               - { label: Image description, name: alt, widget: string, required: false, hint: "Describe the dress for visitors using screen readers." }
-              - { label: Dress name, name: name, widget: string }
-              - { label: Small caption, name: caption, widget: string }
+              - { label: Dress name, name: name, widget: string, required: false }
+              - { label: Small caption, name: caption, widget: string, required: false }
