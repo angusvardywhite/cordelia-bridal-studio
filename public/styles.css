@@ -18,15 +18,33 @@ html {
 
 body {
   position: relative;
+  isolation: isolate;
   margin: 0;
   color: var(--ink);
   background-color: var(--paper);
-  background-image: url("/assets/textures/paper-fibres.webp");
-  background-size: 57.6rem 38.4rem;
   font-family: var(--font-paragraph);
   font-size: 1rem;
   line-height: 1.45;
   -webkit-font-smoothing: antialiased;
+}
+
+body::before {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  content: "";
+  opacity: 0.34;
+  background-image: url("/assets/textures/paper-fibres.webp");
+  background-size: 57.6rem 38.4rem;
+  mix-blend-mode: multiply;
+}
+
+body > header,
+body > main,
+body > footer {
+  position: relative;
+  z-index: 1;
 }
 
 a {
