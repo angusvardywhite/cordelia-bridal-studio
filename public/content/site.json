@@ -3,7 +3,8 @@
   "dresses": [
     {
       "name": "Dress name",
-      "caption": "Reserved for the gallery"
+      "caption": "",
+      "alt": "This is where the description of this photo will go. "
     },
     {
       "name": "Dress name",
@@ -31,10 +32,11 @@
     },
     {}
   ],
-  "contact_text": "Tell us a little about you, your date, and the dress you have not found yet.",
+  "contact_text": "Tell us a little about you, and some ideas you already have for your dress. ",
   "about_heading": "A little about us.",
   "hero_text": "Handmade dresses, designed and fitted around you in our Chester studio.",
   "gallery_heading": "The dresses,\nas they arrive.",
+  "hero_image": "/assets/uploads/whatsapp-image-2026-08-13-at-11.27.15.jpeg",
   "gallery_text": "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
   "hero_heading": "Bespoke. Handmade. Entirely yours.",
   "about_text": "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of meeting with grace to produce the perfect dress."
