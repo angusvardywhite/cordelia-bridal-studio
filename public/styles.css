@@ -17,6 +17,7 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   color: var(--ink);
   background: var(--paper);
@@ -27,7 +28,7 @@ body {
 }
 
 body::before {
-  position: fixed;
+  position: absolute;
   inset: 0;
   z-index: 20;
   pointer-events: none;
