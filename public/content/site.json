@@ -1,12 +1,5 @@
 {
-  "hero_heading": "Bespoke. Handmade. Entirely yours.",
-  "hero_text": "Handmade dresses, designed and fitted around you in our Chester studio.",
-  "about_heading": "A little about us.",
-  "about_text": "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of meeting with grace to produce the perfect dress.",
-  "gallery_heading": "The dresses,\nas they arrive.",
-  "gallery_text": "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
   "contact_heading": "Begin your fitting.",
-  "contact_text": "Tell us a little about you, your date, and the dress you have not found yet.",
   "dresses": [
     {
       "name": "Dress name",
@@ -39,6 +32,24 @@
     {
       "name": "Dress name",
       "caption": "Reserved for the gallery"
-    }
-  ]
+    },
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {},
+    {}
+  ],
+  "contact_text": "Tell us a little about you, your date, and the dress you have not found yet.",
+  "about_heading": "A little about us.",
+  "hero_text": "Handmade dresses, designed and fitted around you in our Chester studio.",
+  "gallery_heading": "The dresses,\nas they arrive.",
+  "gallery_text": "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
+  "hero_heading": "Bespoke. Handmade. Entirely yours.",
+  "about_text": "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of meeting with grace to produce the perfect dress."
 }
