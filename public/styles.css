@@ -21,9 +21,7 @@ body {
   margin: 0;
   color: var(--ink);
   background-color: var(--paper);
-  background-image:
-    linear-gradient(rgba(216, 226, 237, 0.92), rgba(216, 226, 237, 0.92)),
-    url("/assets/textures/paper-fibres-v2.webp");
+  background-image: url("/assets/textures/paper-fibres-cordelia-blue.webp");
   background-size: 96rem 64rem;
   font-family: var(--font-paragraph);
   font-size: 1rem;
