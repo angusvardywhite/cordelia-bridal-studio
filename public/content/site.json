@@ -28,7 +28,8 @@
     {
       "name": "Dress name",
       "caption": "Reserved for the gallery"
-    }
+    },
+    {}
   ],
   "contact_text": "Tell us a little about you, your date, and the dress you have not found yet.",
   "about_heading": "A little about us.",
