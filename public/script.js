@@ -1,8 +1,7 @@
 const fallbackContent = {
-  hero_heading: "Made for the woman, not the moment.",
-  hero_text:
-    "An intimate bridal studio for dresses with presence, instinct and a point of view.",
-  about_heading: "A studio for dresses with a point of view.",
+  hero_heading: "Bespoke. Handmade. Entirely yours.",
+  hero_text: "Handmade dresses, designed and fitted around you in our Chester studio.",
+  about_heading: "A little about us.",
   about_text:
     "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of choosing a dress made to feel entirely your own.",
   gallery_heading: "The dresses,\nas they arrive.",
@@ -13,7 +12,7 @@ const fallbackContent = {
   dresses: Array.from({ length: 8 }, (_, index) => ({
     image: "",
     alt: "",
-    name: `No. ${String(index + 1).padStart(2, "0")}`,
+    name: "Dress name",
     caption: "Reserved for the gallery",
   })),
 };
@@ -42,18 +41,12 @@ function renderDresses(dresses) {
       image.loading = index < 2 ? "eager" : "lazy";
       image.decoding = "async";
       imageFrame.append(image);
-    } else {
-      const placeholder = document.createElement("span");
-      placeholder.className = "dress-placeholder";
-      placeholder.setAttribute("aria-hidden", "true");
-      placeholder.textContent = String(index + 1).padStart(2, "0");
-      imageFrame.append(placeholder);
     }
 
     const caption = document.createElement("figcaption");
     caption.className = "dress-caption";
     const title = document.createElement("h3");
-    title.textContent = dress.name || `No. ${String(index + 1).padStart(2, "0")}`;
+    title.textContent = dress.name || "Dress name";
     const description = document.createElement("p");
     description.textContent = dress.caption || "Cordelia Bridal Studio";
     caption.append(title, description);
