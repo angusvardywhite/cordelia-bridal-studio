@@ -124,9 +124,7 @@ img {
 }
 
 .brand-type,
-.brand-script,
-.brand-i-complete,
-.brand-signature-complete {
+.brand-script {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -143,22 +141,9 @@ img {
   pointer-events: none;
 }
 
-.brand-i-complete {
-  clip-path: inset(27% 19.8% 18% 66.8%);
-  opacity: 0;
-  animation: complete-logo-i 0.01s 3.3s steps(1, end) forwards;
-}
-
-.brand-signature-complete {
-  clip-path: inset(0 0 14% 0);
-  opacity: 0;
-  animation: settle-logo 0.12s 3.46s linear forwards;
-}
-
 .logo-stroke {
   fill: none;
   stroke: white;
-  stroke-width: 64;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-dasharray: 1;
@@ -166,12 +151,9 @@ img {
   animation: trace-logo var(--duration) var(--delay) linear forwards;
 }
 
-.logo-dot {
-  fill: white;
+.logo-mask-finish {
   opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: place-logo-dot 0.12s 2.7s ease-out forwards;
+  animation: finish-logo-mask 0.01s 3.07s steps(1, end) forwards;
 }
 
 .site-header nav {
@@ -463,25 +445,7 @@ footer {
   }
 }
 
-@keyframes place-logo-dot {
-  from {
-    opacity: 0;
-    transform: scale(0.25);
-  }
-
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes settle-logo {
-  to {
-    opacity: 1;
-  }
-}
-
-@keyframes complete-logo-i {
+@keyframes finish-logo-mask {
   to {
     opacity: 1;
   }
@@ -578,16 +542,7 @@ footer {
     stroke-dashoffset: 0;
   }
 
-  .logo-dot {
-    opacity: 1;
-    transform: none;
-  }
-
-  .brand-signature-complete {
-    opacity: 1;
-  }
-
-  .brand-i-complete {
+  .logo-mask-finish {
     opacity: 1;
   }
 }
