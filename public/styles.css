@@ -83,7 +83,7 @@ img {
   background: var(--rule);
   transform: scaleX(0);
   transform-origin: left;
-  animation: draw-rule 1.1s 2.95s ease forwards;
+  animation: draw-rule 1.1s 2.34s ease forwards;
 }
 
 .site-header a,
