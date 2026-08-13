@@ -82,7 +82,7 @@ img {
   background: var(--rule);
   transform: scaleX(0);
   transform-origin: left;
-  animation: draw-rule 1.1s 3.2s ease forwards;
+  animation: draw-rule 1.1s 3.35s ease forwards;
 }
 
 .site-header a,
@@ -124,7 +124,8 @@ img {
 }
 
 .brand-type,
-.brand-script {
+.brand-script,
+.brand-signature-complete {
   position: absolute;
   inset: 0;
   width: 100%;
@@ -139,6 +140,12 @@ img {
   display: block;
   overflow: visible;
   pointer-events: none;
+}
+
+.brand-signature-complete {
+  clip-path: inset(0 0 14% 0);
+  opacity: 0;
+  animation: settle-logo 0.12s 3.3s linear forwards;
 }
 
 .logo-stroke {
@@ -157,7 +164,7 @@ img {
   opacity: 0;
   transform-box: fill-box;
   transform-origin: center;
-  animation: place-logo-dot 0.18s 3.22s ease-out forwards;
+  animation: place-logo-dot 0.12s 2.7s ease-out forwards;
 }
 
 .site-header nav {
@@ -504,6 +511,12 @@ footer {
   }
 }
 
+@keyframes settle-logo {
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes draw-rule {
   to {
     transform: scaleX(1);
@@ -598,5 +611,9 @@ footer {
   .logo-dot {
     opacity: 1;
     transform: none;
+  }
+
+  .brand-signature-complete {
+    opacity: 1;
   }
 }
