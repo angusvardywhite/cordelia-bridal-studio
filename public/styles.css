@@ -483,8 +483,9 @@ footer {
   }
 
   .hero-space {
-    width: auto;
+    width: min(72vw, 22rem);
     height: min(36svh, 19rem);
+    aspect-ratio: auto;
     justify-self: start;
   }
 
