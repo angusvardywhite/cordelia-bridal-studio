@@ -210,6 +210,21 @@ footer {
   filter: saturate(0.78) contrast(0.96);
 }
 
+.hero-space.has-image {
+  width: fit-content;
+  height: fit-content;
+  aspect-ratio: auto;
+}
+
+.hero-space.has-image img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: min(64svh, 38rem);
+  object-fit: contain;
+}
+
 .hero-space.has-image .space-note {
   display: none;
 }
@@ -514,6 +529,17 @@ footer {
     height: min(39svh, 21rem);
     aspect-ratio: 4 / 5.7;
     justify-self: center;
+  }
+
+  .hero-space.has-image {
+    width: fit-content;
+    height: fit-content;
+    aspect-ratio: auto;
+  }
+
+  .hero-space.has-image img {
+    max-width: 60vw;
+    max-height: min(39svh, 21rem);
   }
 
   .hero-copy {
