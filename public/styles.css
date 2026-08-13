@@ -503,15 +503,16 @@ footer {
 
   .hero {
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: clamp(0.85rem, 2svh, 1.15rem);
     min-height: calc(100svh - 8rem);
-    padding-block: clamp(1.5rem, 4svh, 2.5rem);
+    padding-block: clamp(0.75rem, 2svh, 1.25rem);
   }
 
   .hero-space {
-    width: min(72vw, 22rem);
-    height: min(36svh, 19rem);
-    aspect-ratio: auto;
+    width: auto;
+    max-width: 60vw;
+    height: min(39svh, 21rem);
+    aspect-ratio: 4 / 5.7;
     justify-self: start;
   }
 
@@ -521,11 +522,13 @@ footer {
   }
 
   .hero-copy h1 {
-    font-size: clamp(2.25rem, 10vw, 3rem);
+    font-size: clamp(2.65rem, 11.5vw, 3.35rem);
+    line-height: 0.92;
   }
 
   .hero-copy > p {
-    margin-top: 1rem;
+    margin-top: 0.75rem;
+    font-size: clamp(1.075rem, 4.5vw, 1.25rem);
   }
 
   .about {
