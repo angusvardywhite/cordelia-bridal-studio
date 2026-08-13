@@ -148,16 +148,18 @@ img {
   stroke: white;
   stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
 }
 
 .logo-pen-path {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
   animation: trace-logo 2.58s 0.05s linear forwards;
 }
 
 .logo-pen-dot {
-  animation: trace-logo 0.09s 2.63s linear forwards;
+  opacity: 0;
+  visibility: hidden;
+  animation: reveal-logo-dot 0.01s 2.63s steps(1, end) forwards;
 }
 
 .site-header nav {
@@ -450,6 +452,18 @@ footer {
   }
 }
 
+@keyframes reveal-logo-dot {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 @keyframes draw-rule {
   to {
     transform: scaleX(1);
@@ -547,8 +561,12 @@ footer {
     transition-duration: 0.01ms !important;
   }
 
-  .logo-pen-path,
-  .logo-pen-dot {
+  .logo-pen-path {
     stroke-dashoffset: 0;
+  }
+
+  .logo-pen-dot {
+    opacity: 1;
+    visibility: visible;
   }
 }
