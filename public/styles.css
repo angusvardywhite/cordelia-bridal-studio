@@ -398,12 +398,11 @@ footer {
   max-width: 100%;
   height: auto;
   border: 1px solid var(--rule);
-  filter: saturate(0.78) contrast(0.96);
-  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.8s ease;
+  filter: none;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
 }
 
 .dress-card:hover .dress-image img {
-  filter: saturate(1) contrast(1);
   transform: scale(1.025);
 }
 
