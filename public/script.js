@@ -19,6 +19,26 @@ const fallbackContent = {
   })),
 };
 
+function sizeGalleryMedia(figure) {
+  const image = figure.querySelector(".dress-image img");
+  if (!image?.naturalWidth || !image.naturalHeight) return;
+
+  const availableWidth = figure.getBoundingClientRect().width;
+  const rootFontSize = Number.parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
+  const maximumHeight = Math.min(window.innerHeight * 0.85, rootFontSize * 60);
+  const naturalRatio = image.naturalWidth / image.naturalHeight;
+  const displayedWidth = Math.min(availableWidth, maximumHeight * naturalRatio);
+
+  figure.style.setProperty("--gallery-media-width", `${Math.floor(displayedWidth)}px`);
+}
+
+const galleryCardObserver =
+  "ResizeObserver" in window
+    ? new ResizeObserver((entries) => {
+        entries.forEach((entry) => sizeGalleryMedia(entry.target));
+      })
+    : null;
+
 function setText(id, value) {
   const element = document.getElementById(id);
   if (element && typeof value === "string") element.textContent = value;
@@ -49,6 +69,7 @@ function renderHeroImage(imagePath, altText) {
 function renderDresses(dresses) {
   const gallery = document.getElementById("dress-gallery");
   if (!gallery) return;
+  galleryCardObserver?.disconnect();
   gallery.replaceChildren();
 
   dresses.forEach((dress, index) => {
@@ -58,6 +79,7 @@ function renderDresses(dresses) {
     const imageFrame = document.createElement("div");
     imageFrame.className = "dress-image";
 
+    let cardImage = null;
     if (dress.image) {
       const image = document.createElement("img");
       image.src = dress.image;
@@ -67,6 +89,7 @@ function renderDresses(dresses) {
       figure.classList.add("has-image");
       imageFrame.classList.add("has-image");
       imageFrame.append(image);
+      cardImage = image;
     }
 
     const caption = document.createElement("figcaption");
@@ -78,6 +101,15 @@ function renderDresses(dresses) {
     caption.append(title, description);
     figure.append(imageFrame, caption);
     gallery.append(figure);
+
+    if (cardImage) {
+      if (cardImage.complete) {
+        sizeGalleryMedia(figure);
+      } else {
+        cardImage.addEventListener("load", () => sizeGalleryMedia(figure), { once: true });
+      }
+      galleryCardObserver?.observe(figure);
+    }
   });
 }
 

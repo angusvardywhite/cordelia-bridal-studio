@@ -355,7 +355,7 @@ footer {
 }
 
 .dress-image.has-image {
-  width: 100%;
+  width: min(100%, var(--gallery-media-width, 100%));
   max-width: 100%;
   aspect-ratio: auto;
   border: 0;
@@ -386,6 +386,7 @@ footer {
 }
 
 .dress-card.has-image .dress-caption {
+  width: min(100%, var(--gallery-media-width, 100%));
   border-top: 0;
 }
 
