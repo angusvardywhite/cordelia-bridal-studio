@@ -527,7 +527,8 @@ footer {
   }
 
   .hero-copy > p {
-    margin-top: 0.75rem;
+    width: 60%;
+    margin: 0.75rem 0 0 auto;
     font-size: clamp(1.075rem, 4.5vw, 1.25rem);
   }
 
