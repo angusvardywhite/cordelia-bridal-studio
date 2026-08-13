@@ -64,6 +64,7 @@ function renderDresses(dresses) {
       image.alt = dress.alt || `${dress.name || "Cordelia dress"} by Cordelia Bridal Studio`;
       image.loading = index < 2 ? "eager" : "lazy";
       image.decoding = "async";
+      figure.classList.add("has-image");
       imageFrame.classList.add("has-image");
       imageFrame.append(image);
     }
