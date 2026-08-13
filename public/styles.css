@@ -513,7 +513,7 @@ footer {
     max-width: 60vw;
     height: min(39svh, 21rem);
     aspect-ratio: 4 / 5.7;
-    justify-self: start;
+    justify-self: center;
   }
 
   .hero-copy {
