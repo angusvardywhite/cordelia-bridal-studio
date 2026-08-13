@@ -88,6 +88,28 @@ function observeReveals() {
   items.forEach((item) => observer.observe(item));
 }
 
+function revealLogoDot() {
+  const penPath = document.querySelector(".logo-pen-path");
+  const dot = document.querySelector(".brand-script-dot");
+  if (!dot) return;
+
+  const reveal = () => dot.classList.add("is-visible");
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    reveal();
+    return;
+  }
+
+  const fallback = window.setTimeout(reveal, 2800);
+  penPath?.addEventListener(
+    "animationend",
+    () => {
+      window.clearTimeout(fallback);
+      reveal();
+    },
+    { once: true },
+  );
+}
+
 async function loadContent() {
   try {
     const response = await fetch("/content/site.json", { cache: "no-store" });
@@ -101,4 +123,5 @@ async function loadContent() {
 }
 
 document.getElementById("current-year").textContent = new Date().getFullYear();
+revealLogoDot();
 loadContent();

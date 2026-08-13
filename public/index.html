@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="/assets/brand/favicon-512.png" />
     <link rel="apple-touch-icon" href="/assets/brand/icon-192.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="/styles.css?v=20260813-2" />
+    <link rel="stylesheet" href="/styles.css?v=20260813-3" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -79,19 +79,23 @@
                     C1062 454 1096 419 1122 402
                     C1152 439 1184 438 1264 451"
                 />
-                <path
-                  class="logo-pen-dot"
-                  pathLength="1"
-                  stroke-width="31"
-                  d="M938 212 L951 228"
-                />
               </mask>
+              <clipPath id="cordelia-dot-clip" clipPathUnits="userSpaceOnUse">
+                <rect x="929" y="201" width="31" height="37" />
+              </clipPath>
             </defs>
             <image
               href="/assets/brand/cordelia-logo-black.png"
               width="1272"
               height="590"
               mask="url(#cordelia-script-mask)"
+            />
+            <image
+              class="brand-script-dot"
+              href="/assets/brand/cordelia-logo-black.png"
+              width="1272"
+              height="590"
+              clip-path="url(#cordelia-dot-clip)"
             />
           </svg>
         </span>
@@ -165,6 +169,6 @@
       <span>© <span id="current-year"></span> Cordelia Bridal Studio</span>
     </footer>
 
-    <script src="/script.js" defer></script>
+    <script src="/script.js?v=20260813-3" defer></script>
   </body>
 </html>

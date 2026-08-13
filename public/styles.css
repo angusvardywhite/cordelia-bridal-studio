@@ -142,24 +142,24 @@ img {
   pointer-events: none;
 }
 
-.logo-pen-path,
-.logo-pen-dot {
+.logo-pen-path {
   fill: none;
   stroke: white;
   stroke-linecap: round;
   stroke-linejoin: round;
-}
-
-.logo-pen-path {
   stroke-dasharray: 1;
   stroke-dashoffset: 1;
   animation: trace-logo 2.58s 0.05s linear forwards;
 }
 
-.logo-pen-dot {
+.brand-script-dot {
   opacity: 0;
-  visibility: hidden;
   animation: reveal-logo-dot 0.01s 2.63s steps(1, end) forwards;
+}
+
+.brand-script-dot.is-visible {
+  opacity: 1;
+  animation: none;
 }
 
 .site-header nav {
@@ -453,14 +453,8 @@ footer {
 }
 
 @keyframes reveal-logo-dot {
-  from {
-    opacity: 0;
-    visibility: hidden;
-  }
-
   to {
     opacity: 1;
-    visibility: visible;
   }
 }
 
@@ -565,8 +559,7 @@ footer {
     stroke-dashoffset: 0;
   }
 
-  .logo-pen-dot {
+  .brand-script-dot {
     opacity: 1;
-    visibility: visible;
   }
 }
