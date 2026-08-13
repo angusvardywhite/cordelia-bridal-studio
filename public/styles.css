@@ -355,9 +355,8 @@ footer {
 }
 
 .dress-image.has-image {
-  width: fit-content;
+  width: 100%;
   max-width: 100%;
-  max-height: min(85svh, 60rem);
   aspect-ratio: auto;
   border: 0;
   background: transparent;
@@ -365,10 +364,9 @@ footer {
 
 .dress-image img {
   display: block;
-  width: auto;
+  width: 100%;
   max-width: 100%;
   height: auto;
-  max-height: min(85svh, 60rem);
   border: 1px solid var(--rule);
   filter: saturate(0.78) contrast(0.96);
   transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1), filter 0.8s ease;
