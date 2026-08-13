@@ -2,7 +2,7 @@ backend:
   name: github
   repo: angusvardywhite/cordelia-bridal-studio
   branch: main
-  base_url: https://auth.cordeliabridalstudio.com
+  base_url: https://bread-and-bean-auth.angusvardywhite.workers.dev
   auth_endpoint: /auth
   site_domain: cordeliabridalstudio.com
   commit_messages:
