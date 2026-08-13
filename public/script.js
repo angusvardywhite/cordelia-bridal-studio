@@ -3,7 +3,7 @@ const fallbackContent = {
   hero_text: "Handmade dresses, designed and fitted around you in our Chester studio.",
   about_heading: "A little about us.",
   about_text:
-    "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of choosing a dress made to feel entirely your own.",
+    "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of meeting with grace to produce the perfect dress.",
   gallery_heading: "The dresses,\nas they arrive.",
   gallery_text:
     "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
