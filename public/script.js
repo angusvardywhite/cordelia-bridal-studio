@@ -1,4 +1,6 @@
 const fallbackContent = {
+  hero_image: "",
+  hero_image_alt: "",
   hero_heading: "Bespoke. Handmade. Entirely yours.",
   hero_text: "Handmade dresses, designed and fitted around you in our Chester studio.",
   about_heading: "A little about us.",
@@ -20,6 +22,28 @@ const fallbackContent = {
 function setText(id, value) {
   const element = document.getElementById(id);
   if (element && typeof value === "string") element.textContent = value;
+}
+
+function renderHeroImage(imagePath, altText) {
+  const frame = document.getElementById("hero-image-frame");
+  if (!frame) return;
+
+  frame.querySelector("img")?.remove();
+  frame.classList.toggle("has-image", Boolean(imagePath));
+
+  if (!imagePath) {
+    frame.setAttribute("aria-label", "A space reserved for a Cordelia dress");
+    return;
+  }
+
+  frame.removeAttribute("aria-label");
+  const image = document.createElement("img");
+  image.src = imagePath;
+  image.alt = altText || "A dress by Cordelia Bridal Studio";
+  image.loading = "eager";
+  image.decoding = "async";
+  image.fetchPriority = "high";
+  frame.prepend(image);
 }
 
 function renderDresses(dresses) {
@@ -56,6 +80,7 @@ function renderDresses(dresses) {
 }
 
 function applyContent(content) {
+  renderHeroImage(content.hero_image, content.hero_image_alt);
   setText("hero-heading", content.hero_heading);
   setText("hero-text", content.hero_text);
   setText("about-heading", content.about_heading);

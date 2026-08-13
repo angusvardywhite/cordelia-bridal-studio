@@ -203,6 +203,17 @@ footer {
   justify-self: end;
 }
 
+.hero-space img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.78) contrast(0.96);
+}
+
+.hero-space.has-image .space-note {
+  display: none;
+}
+
 .space-note {
   position: absolute;
   right: 1rem;

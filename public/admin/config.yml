@@ -28,14 +28,12 @@ collections:
         file: public/content/site.json
         format: json
         fields:
+          - { label: "First image beside the main heading", name: hero_image, widget: image, required: false, hint: "This controls the large first image at the top of the website." }
+          - { label: First image description, name: hero_image_alt, widget: string, required: false, hint: "Briefly describe this image for visitors using screen readers." }
           - { label: Main heading, name: hero_heading, widget: string }
           - { label: Intro text, name: hero_text, widget: text }
-          - { label: About heading, name: about_heading, widget: string }
-          - { label: About text, name: about_text, widget: text }
           - { label: Gallery heading, name: gallery_heading, widget: text }
           - { label: Gallery text, name: gallery_text, widget: text }
-          - { label: Contact heading, name: contact_heading, widget: string }
-          - { label: Contact text, name: contact_text, widget: text }
           - label: "Gallery photos & text"
             name: dresses
             widget: list
@@ -47,3 +45,7 @@ collections:
               - { label: Image description, name: alt, widget: string, required: false, hint: "Describe the dress for visitors using screen readers." }
               - { label: Dress name, name: name, widget: string, required: false }
               - { label: Small caption, name: caption, widget: string, required: false }
+          - { label: About heading, name: about_heading, widget: string }
+          - { label: About text, name: about_text, widget: text }
+          - { label: Contact heading, name: contact_heading, widget: string }
+          - { label: Contact text, name: contact_text, widget: text }
