@@ -284,7 +284,7 @@ footer {
   border-top: 1px solid var(--rule);
 }
 
-.about h2 {
+.about-copy h2 {
   max-width: 13ch;
   margin: 0;
   font-family: var(--font-heading);
@@ -294,10 +294,30 @@ footer {
   letter-spacing: 0.015em;
 }
 
-.about > p:last-child {
+.about-copy p {
   max-width: 28rem;
   margin: 0.45rem 0 0;
   font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.about-image {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+}
+
+.about-image.has-image {
+  aspect-ratio: auto;
+  border: 0;
+  background: transparent;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+}
+
+.about-image.has-image .space-note {
+  display: none;
 }
 
 .gallery-section {
@@ -313,15 +333,20 @@ footer {
   margin-bottom: clamp(4rem, 7vw, 7rem);
 }
 
-.gallery-intro h2 {
+.gallery-intro-copy {
+  grid-column: 3;
+}
+
+.gallery-intro-copy h2 {
   max-width: 13ch;
+  margin: 0;
   font-size: clamp(2.7rem, 4.6vw, 5.2rem);
   line-height: 0.94;
 }
 
-.gallery-intro > p:last-child {
+.gallery-intro-copy p {
   max-width: 28rem;
-  margin: 0.45rem 0 0;
+  margin: 1rem 0 0;
 }
 
 .about > .section-label,
@@ -584,13 +609,17 @@ footer {
     padding: clamp(7rem, 11vw, 12rem) var(--page-pad);
   }
 
-  .about h2 {
+  .about-copy h2 {
     max-width: 11ch;
     line-height: 0.9;
   }
 
-  .about > p:last-child {
+  .about-copy p {
     margin-top: 0.5rem;
+  }
+
+  .about-image {
+    width: min(100%, 28rem);
   }
 
   .gallery-section {
@@ -603,12 +632,16 @@ footer {
     margin-bottom: clamp(5rem, 10vw, 10rem);
   }
 
-  .gallery-intro h2 {
+  .gallery-intro-copy {
+    grid-column: auto;
+  }
+
+  .gallery-intro-copy h2 {
     max-width: none;
     line-height: 0.9;
   }
 
-  .gallery-intro > p:last-child {
+  .gallery-intro-copy p {
     margin-top: 1rem;
   }
 

@@ -47,5 +47,7 @@ collections:
               - { label: Small caption, name: caption, widget: string, required: false }
           - { label: About heading, name: about_heading, widget: string }
           - { label: About text, name: about_text, widget: text }
+          - { label: About image, name: about_image, widget: image, required: false, hint: "This controls the image beside the About text." }
+          - { label: About image description, name: about_image_alt, widget: string, required: false, hint: "Briefly describe this image for visitors using screen readers." }
           - { label: Contact heading, name: contact_heading, widget: string }
           - { label: Contact text, name: contact_text, widget: text }

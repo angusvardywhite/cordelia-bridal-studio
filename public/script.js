@@ -6,6 +6,8 @@ const fallbackContent = {
   about_heading: "A little about us.",
   about_text:
     "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of meeting with grace to produce the perfect dress.",
+  about_image: "",
+  about_image_alt: "",
   gallery_heading: "The dresses,\nas they arrive.",
   gallery_text:
     "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
@@ -66,6 +68,27 @@ function renderHeroImage(imagePath, altText) {
   frame.prepend(image);
 }
 
+function renderAboutImage(imagePath, altText) {
+  const frame = document.getElementById("about-image-frame");
+  if (!frame) return;
+
+  frame.querySelector("img")?.remove();
+  frame.classList.toggle("has-image", Boolean(imagePath));
+
+  if (!imagePath) {
+    frame.setAttribute("aria-label", "A space reserved for the studio story");
+    return;
+  }
+
+  frame.removeAttribute("aria-label");
+  const image = document.createElement("img");
+  image.src = imagePath;
+  image.alt = altText || "Cordelia Bridal Studio";
+  image.loading = "lazy";
+  image.decoding = "async";
+  frame.prepend(image);
+}
+
 function renderDresses(dresses) {
   const gallery = document.getElementById("dress-gallery");
   if (!gallery) return;
@@ -115,6 +138,7 @@ function renderDresses(dresses) {
 
 function applyContent(content) {
   renderHeroImage(content.hero_image, content.hero_image_alt);
+  renderAboutImage(content.about_image, content.about_image_alt);
   setText("hero-heading", content.hero_heading);
   setText("hero-text", content.hero_text);
   setText("about-heading", content.about_heading);

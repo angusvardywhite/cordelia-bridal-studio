@@ -13,7 +13,7 @@
     <link rel="icon" type="image/png" href="/assets/brand/favicon-512.png" />
     <link rel="apple-touch-icon" href="/assets/brand/icon-192.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="stylesheet" href="/styles.css?v=20260813-23" />
+    <link rel="stylesheet" href="/styles.css?v=20260813-24" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -128,10 +128,12 @@
       <section class="gallery-section" id="gallery" aria-labelledby="gallery-heading">
         <div class="gallery-intro">
           <p class="section-label">The gallery</p>
-          <h2 id="gallery-heading">The dresses,<br />as they arrive.</h2>
-          <p id="gallery-text">
-            A growing edit of silhouettes, details and one-of-one pieces from the studio.
-          </p>
+          <div class="gallery-intro-copy">
+            <h2 id="gallery-heading">The dresses,<br />as they arrive.</h2>
+            <p id="gallery-text">
+              A growing edit of silhouettes, details and one-of-one pieces from the studio.
+            </p>
+          </div>
         </div>
 
         <div class="dress-grid" id="dress-gallery" aria-live="polite"></div>
@@ -139,11 +141,16 @@
 
       <section class="about" id="about" aria-labelledby="about-heading">
         <p class="section-label">About</p>
-        <h2 id="about-heading">A little about us.</h2>
-        <p id="about-text">
-          Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and
-          the experience of meeting with grace to produce the perfect dress.
-        </p>
+        <figure class="image-space about-image" id="about-image-frame" aria-label="A space reserved for the studio story">
+          <span class="space-note">A studio image belongs here</span>
+        </figure>
+        <div class="about-copy">
+          <h2 id="about-heading">A little about us.</h2>
+          <p id="about-text">
+            Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and
+            the experience of meeting with grace to produce the perfect dress.
+          </p>
+        </div>
       </section>
 
       <section class="contact" id="contact" aria-labelledby="contact-heading">
@@ -156,7 +163,7 @@
         </div>
         <div class="contact-links" aria-label="Contact Cordelia Bridal Studio">
           <a class="contact-link" href="mailto:bespoke@cordeliabridalstudio.com">
-            bespoke@cordeliabridalstudio.com
+            Email
           </a>
           <a class="contact-link" href="sms:+447734088630">
             Message
@@ -172,6 +179,6 @@
       <span>© <span id="current-year"></span> Cordelia Bridal Studio</span>
     </footer>
 
-    <script src="/script.js?v=20260813-11" defer></script>
+    <script src="/script.js?v=20260813-12" defer></script>
   </body>
 </html>
