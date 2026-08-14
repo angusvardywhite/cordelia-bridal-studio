@@ -5,28 +5,32 @@ const delay = (duration) => new Promise((resolve) => window.setTimeout(resolve, 
 function prepareTypedText() {
   if (reducedMotion.matches) return;
   document.querySelectorAll(".typed-text").forEach((element) => {
-    element.textContent = "";
+    const output = element.querySelector(".typed-output");
+    if (output) output.textContent = "";
   });
 }
 
 async function typeText(element, speed = 82) {
   if (!element) return;
 
-  const text = element.dataset.typeText || element.textContent || "";
+  const output = element.querySelector(".typed-output");
+  if (!output) return;
+
+  const text = element.dataset.typeText || output.textContent || "";
   if (reducedMotion.matches) {
-    element.textContent = text;
+    output.textContent = text;
     return;
   }
 
-  element.textContent = "";
-  element.classList.add("is-typing");
+  output.textContent = "";
+  output.classList.add("is-typing");
 
   for (const character of text) {
-    element.textContent += character;
+    output.textContent += character;
     await delay(character === " " ? speed * 0.45 : speed);
   }
 
-  element.classList.remove("is-typing");
+  output.classList.remove("is-typing");
 }
 
 function revealLogoDot() {

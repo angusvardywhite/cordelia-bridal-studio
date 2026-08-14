@@ -120,12 +120,11 @@ body::before {
 
 .brand-subtitle {
   min-height: 1.6em;
-  margin-top: clamp(-1.2rem, -2vw, -0.35rem);
-  padding-right: 2.5%;
-  font-size: clamp(0.8rem, 1.5vw, 1.25rem);
+  margin-top: clamp(0.2rem, 0.75vw, 0.65rem);
+  font-size: clamp(1rem, 2.2vw, 1.9rem);
   line-height: 1.2;
-  letter-spacing: 0.2em;
-  text-align: right;
+  letter-spacing: 0.16em;
+  text-align: center;
 }
 
 .details {
@@ -167,10 +166,26 @@ body::before {
 }
 
 .typed-text {
-  display: inline-block;
+  display: inline-grid;
+  text-align: left;
 }
 
-.typed-text.is-typing::after {
+.typed-text::before,
+.typed-output {
+  grid-area: 1 / 1;
+  white-space: pre;
+}
+
+.typed-text::before {
+  visibility: hidden;
+  content: attr(data-type-text);
+}
+
+.typed-output {
+  justify-self: start;
+}
+
+.typed-output.is-typing::after {
   display: inline-block;
   width: 1px;
   height: 0.86em;
@@ -205,9 +220,8 @@ body::before {
   }
 
   .brand-subtitle {
-    margin-top: -0.55rem;
-    padding-right: 1%;
-    font-size: clamp(0.7rem, 3.4vw, 0.95rem);
+    margin-top: 0.3rem;
+    font-size: clamp(0.95rem, 4.65vw, 1.2rem);
   }
 
   .details {
