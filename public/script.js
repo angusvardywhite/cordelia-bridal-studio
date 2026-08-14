@@ -17,6 +17,35 @@ async function typeText(element, speed = 82) {
   if (!output) return;
 
   const text = element.dataset.typeText || output.textContent || "";
+
+  if (element.closest(".telephone")) {
+    const characters = text.split(/\s+/).filter(Boolean);
+    const spans = characters.map((character) => {
+      const span = document.createElement("span");
+      span.className = "phone-character";
+      span.textContent = character;
+      span.style.visibility = "hidden";
+      return span;
+    });
+
+    output.replaceChildren(...spans);
+
+    if (reducedMotion.matches) {
+      spans.forEach((span) => span.style.removeProperty("visibility"));
+      return;
+    }
+
+    for (const span of spans) {
+      span.style.removeProperty("visibility");
+      span.classList.add("is-typing");
+      await delay(speed);
+      span.classList.remove("is-typing");
+      await delay(speed * 0.45);
+    }
+
+    return;
+  }
+
   if (reducedMotion.matches) {
     output.textContent = text;
     return;

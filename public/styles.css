@@ -138,7 +138,7 @@ body::before {
   row-gap: clamp(3rem, 5.7vw, 5.25rem);
   width: min(100%, 31rem);
   margin-left: clamp(0rem, 5vw, 6rem);
-  font-size: clamp(0.95rem, 1.9vw, 1.55rem);
+  font-size: clamp(1.08rem, 2.2vw, 1.8rem);
   line-height: 1.45;
   letter-spacing: 0.16em;
 }
@@ -152,8 +152,29 @@ body::before {
 
 .telephone {
   min-height: 1.45em;
-  word-spacing: clamp(0.35rem, 1.35vw, 1.15rem);
   white-space: nowrap;
+}
+
+.telephone .typed-text,
+.telephone .typed-output {
+  width: 100%;
+}
+
+.telephone .typed-output {
+  display: grid;
+  grid-template-columns: repeat(11, max-content);
+  justify-content: space-between;
+}
+
+.phone-character.is-typing::after {
+  display: inline-block;
+  width: 1px;
+  height: 0.86em;
+  margin-left: 0.12em;
+  vertical-align: -0.04em;
+  content: "";
+  background: currentColor;
+  animation: cursor-blink 0.72s steps(1, end) infinite;
 }
 
 .coming-soon {
@@ -218,8 +239,11 @@ body::before {
 
 @media (max-width: 700px) {
   .brand-lockup {
+    right: auto;
     bottom: clamp(2rem, 5svh, 3.5rem);
+    left: 50%;
     width: min(78vw, 29rem);
+    transform: translateX(-50%);
   }
 
   .brand-subtitle {
@@ -235,11 +259,7 @@ body::before {
     row-gap: clamp(2.75rem, 10vw, 4rem);
     width: 100%;
     margin-left: 0;
-    font-size: clamp(0.88rem, 4.2vw, 1.1rem);
-  }
-
-  .telephone {
-    word-spacing: clamp(0.4rem, 3vw, 0.75rem);
+    font-size: clamp(1rem, 4.8vw, 1.265rem);
   }
 
   .coming-soon {
