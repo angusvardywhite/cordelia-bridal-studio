@@ -133,8 +133,10 @@ body::before {
 }
 
 .contact-details {
+  display: grid;
   grid-row: 2;
-  width: min(100%, 37rem);
+  row-gap: clamp(3rem, 5.7vw, 5.25rem);
+  width: min(100%, 31rem);
   margin-left: clamp(0rem, 5vw, 6rem);
   font-size: clamp(0.82rem, 1.65vw, 1.35rem);
   line-height: 1.45;
@@ -142,14 +144,15 @@ body::before {
 }
 
 .contact-row {
-  display: grid;
-  grid-template-columns: minmax(11rem, 1.45fr) minmax(6rem, 1fr);
-  column-gap: clamp(2rem, 7vw, 7rem);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
   min-height: 1.45em;
 }
 
 .telephone {
   min-height: 1.45em;
+  word-spacing: clamp(0.45rem, 1.65vw, 1.4rem);
   white-space: nowrap;
 }
 
@@ -229,14 +232,14 @@ body::before {
   }
 
   .contact-details {
+    row-gap: clamp(2.75rem, 10vw, 4rem);
     width: 100%;
     margin-left: 0;
     font-size: clamp(0.78rem, 3.7vw, 1rem);
   }
 
-  .contact-row {
-    grid-template-columns: minmax(9.5rem, 1.5fr) minmax(4rem, 0.7fr);
-    column-gap: clamp(1.2rem, 8vw, 3rem);
+  .telephone {
+    word-spacing: clamp(0.5rem, 3.5vw, 0.9rem);
   }
 
   .coming-soon {
