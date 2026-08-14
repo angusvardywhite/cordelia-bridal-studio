@@ -74,6 +74,7 @@ body::before {
   position: absolute;
   right: var(--page-pad);
   bottom: clamp(2.5rem, 7svh, 6rem);
+  container-type: inline-size;
   width: clamp(18rem, 35vw, 34rem);
 }
 
@@ -122,8 +123,8 @@ body::before {
   display: flex;
   justify-content: center;
   min-height: 1.6em;
-  margin-top: clamp(0.2rem, 0.75vw, 0.65rem);
-  font-size: 1.9rem;
+  margin-top: 1.75cqi;
+  font-size: 6cqi;
   line-height: 1.2;
   letter-spacing: 0.16em;
   text-align: center;
@@ -250,10 +251,6 @@ body::before {
     left: 50%;
     width: min(78vw, 29rem);
     transform: translateX(-50%);
-  }
-
-  .brand-subtitle {
-    margin-top: 0.3rem;
   }
 
   .details {
