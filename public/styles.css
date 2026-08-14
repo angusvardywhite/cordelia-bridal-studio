@@ -184,6 +184,13 @@ body > main {
   white-space: nowrap;
 }
 
+.telephone-link {
+  display: block;
+  width: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
 .telephone .typed-text,
 .telephone .typed-output {
   width: 100%;
