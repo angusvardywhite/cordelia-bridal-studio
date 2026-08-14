@@ -41,14 +41,31 @@ body::before {
   top: 0.75rem;
   left: 0.75rem;
   z-index: 10;
-  padding: 0.65rem 0.85rem;
-  color: var(--paper);
-  background: var(--ink);
-  transform: translateY(-160%);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  color: transparent;
+  white-space: nowrap;
+  background: transparent;
+  border: 0;
+  opacity: 0;
 }
 
 .skip-link:focus {
-  transform: translateY(0);
+  width: auto;
+  height: auto;
+  padding: 0.65rem 0.85rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  color: var(--paper);
+  background: var(--ink);
+  opacity: 1;
 }
 
 .visually-hidden {
