@@ -1,210 +1,120 @@
-const fallbackContent = {
-  hero_image: "",
-  hero_image_alt: "",
-  hero_heading: "Bespoke. Handmade. Entirely yours.",
-  hero_text: "Handmade dresses, designed and fitted around you in our Chester studio.",
-  about_heading: "A little about us.",
-  about_text:
-    "Placeholder text for the story of Cordelia Bridal Studio, its approach to design, and the experience of meeting with grace to produce the perfect dress.",
-  about_image: "",
-  about_image_alt: "",
-  gallery_heading: "The dresses,\nas they arrive.",
-  gallery_text:
-    "A growing edit of silhouettes, details and one-of-one pieces from the studio.",
-  contact_heading: "Begin your fitting.",
-  contact_text: "Tell us a little about you, your date, and the dress you have not found yet.",
-  dresses: Array.from({ length: 8 }, (_, index) => ({
-    image: "",
-    alt: "",
-    name: "Dress name",
-    caption: "Reserved for the gallery",
-  })),
-};
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-function sizeGalleryMedia(figure) {
-  const image = figure.querySelector(".dress-image img");
-  if (!image?.naturalWidth || !image.naturalHeight) return;
+const delay = (duration) => new Promise((resolve) => window.setTimeout(resolve, duration));
 
-  const availableWidth = figure.getBoundingClientRect().width;
-  const rootFontSize = Number.parseFloat(getComputedStyle(document.documentElement).fontSize) || 16;
-  const maximumHeight = Math.min(window.innerHeight * 0.85, rootFontSize * 60);
-  const naturalRatio = image.naturalWidth / image.naturalHeight;
-  const displayedWidth = Math.min(availableWidth, maximumHeight * naturalRatio);
-
-  figure.style.setProperty("--gallery-media-width", `${Math.floor(displayedWidth)}px`);
-}
-
-const galleryCardObserver =
-  "ResizeObserver" in window
-    ? new ResizeObserver((entries) => {
-        entries.forEach((entry) => sizeGalleryMedia(entry.target));
-      })
-    : null;
-
-function setText(id, value) {
-  const element = document.getElementById(id);
-  if (element && typeof value === "string") element.textContent = value;
-}
-
-function renderHeroImage(imagePath, altText) {
-  const frame = document.getElementById("hero-image-frame");
-  if (!frame) return;
-
-  frame.querySelector("img")?.remove();
-  frame.classList.toggle("has-image", Boolean(imagePath));
-
-  if (!imagePath) {
-    frame.setAttribute("aria-label", "A space reserved for a Cordelia dress");
-    return;
-  }
-
-  frame.removeAttribute("aria-label");
-  const image = document.createElement("img");
-  image.src = imagePath;
-  image.alt = altText || "A dress by Cordelia Bridal Studio";
-  image.loading = "eager";
-  image.decoding = "async";
-  image.fetchPriority = "high";
-  frame.prepend(image);
-}
-
-function renderAboutImage(imagePath, altText) {
-  const frame = document.getElementById("about-image-frame");
-  if (!frame) return;
-
-  frame.querySelector("img")?.remove();
-  frame.classList.toggle("has-image", Boolean(imagePath));
-
-  if (!imagePath) {
-    frame.setAttribute("aria-label", "A space reserved for the studio story");
-    return;
-  }
-
-  frame.removeAttribute("aria-label");
-  const image = document.createElement("img");
-  image.src = imagePath;
-  image.alt = altText || "Cordelia Bridal Studio";
-  image.loading = "lazy";
-  image.decoding = "async";
-  frame.prepend(image);
-}
-
-function renderDresses(dresses) {
-  const gallery = document.getElementById("dress-gallery");
-  if (!gallery) return;
-  galleryCardObserver?.disconnect();
-  gallery.replaceChildren();
-
-  dresses.forEach((dress, index) => {
-    const figure = document.createElement("figure");
-    figure.className = "dress-card content-reveal";
-
-    const imageFrame = document.createElement("div");
-    imageFrame.className = "dress-image";
-
-    let cardImage = null;
-    if (dress.image) {
-      const image = document.createElement("img");
-      image.src = dress.image;
-      image.alt = dress.alt || `${dress.name || "Cordelia dress"} by Cordelia Bridal Studio`;
-      image.loading = index < 2 ? "eager" : "lazy";
-      image.decoding = "async";
-      figure.classList.add("has-image");
-      imageFrame.classList.add("has-image");
-      imageFrame.append(image);
-      cardImage = image;
-    }
-
-    const caption = document.createElement("figcaption");
-    caption.className = "dress-caption";
-    const title = document.createElement("h3");
-    title.textContent = dress.name || "Dress name";
-    const description = document.createElement("p");
-    description.textContent = dress.caption || "Cordelia Bridal Studio";
-    caption.append(title, description);
-    figure.append(imageFrame, caption);
-    gallery.append(figure);
-
-    if (cardImage) {
-      if (cardImage.complete) {
-        sizeGalleryMedia(figure);
-      } else {
-        cardImage.addEventListener("load", () => sizeGalleryMedia(figure), { once: true });
-      }
-      galleryCardObserver?.observe(figure);
-    }
+function prepareTypedText() {
+  if (reducedMotion.matches) return;
+  document.querySelectorAll(".typed-text").forEach((element) => {
+    element.textContent = "";
   });
 }
 
-function applyContent(content) {
-  renderHeroImage(content.hero_image, content.hero_image_alt);
-  renderAboutImage(content.about_image, content.about_image_alt);
-  setText("hero-heading", content.hero_heading);
-  setText("hero-text", content.hero_text);
-  setText("about-heading", content.about_heading);
-  setText("about-text", content.about_text);
-  setText("gallery-heading", content.gallery_heading);
-  setText("gallery-text", content.gallery_text);
-  setText("contact-heading", content.contact_heading);
-  setText("contact-text", content.contact_text);
-  renderDresses(Array.isArray(content.dresses) ? content.dresses : fallbackContent.dresses);
-}
+async function typeText(element, speed = 82) {
+  if (!element) return;
 
-function observeReveals() {
-  const items = document.querySelectorAll(".content-reveal");
-  if (!("IntersectionObserver" in window)) {
-    items.forEach((item) => item.classList.add("is-visible"));
+  const text = element.dataset.typeText || element.textContent || "";
+  if (reducedMotion.matches) {
+    element.textContent = text;
     return;
   }
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { rootMargin: "0px 0px -8%", threshold: 0.08 },
-  );
-  items.forEach((item) => observer.observe(item));
+  element.textContent = "";
+  element.classList.add("is-typing");
+
+  for (const character of text) {
+    element.textContent += character;
+    await delay(character === " " ? speed * 0.45 : speed);
+  }
+
+  element.classList.remove("is-typing");
 }
 
 function revealLogoDot() {
   const penPath = document.querySelector(".logo-pen-path");
   const dot = document.querySelector(".brand-script-dot");
-  if (!dot) return;
+  const subtitle = document.querySelector(".brand-subtitle .typed-text");
 
-  const reveal = () => dot.classList.add("is-visible");
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-    reveal();
+  if (reducedMotion.matches) {
+    dot?.classList.add("is-visible");
+    return Promise.resolve(typeText(subtitle));
+  }
+
+  return new Promise((resolve) => {
+    let completed = false;
+
+    const finish = async () => {
+      if (completed) return;
+      completed = true;
+      dot?.classList.add("is-visible");
+      await delay(180);
+      await typeText(subtitle, 88);
+      resolve();
+    };
+
+    const fallback = window.setTimeout(finish, 2393);
+    penPath?.addEventListener(
+      "animationend",
+      () => {
+        window.clearTimeout(fallback);
+        finish();
+      },
+      { once: true },
+    );
+  });
+}
+
+async function typeContactDetails() {
+  const lines = document.querySelectorAll(".contact-details .typed-text");
+
+  for (const line of lines) {
+    await typeText(line, 68);
+    await delay(95);
+  }
+}
+
+function observeOnce(element, callback, options) {
+  if (!element) return;
+  if (!("IntersectionObserver" in window) || reducedMotion.matches) {
+    callback();
     return;
   }
 
-  const fallback = window.setTimeout(reveal, 2393);
-  penPath?.addEventListener(
-    "animationend",
-    () => {
-      window.clearTimeout(fallback);
-      reveal();
-    },
-    { once: true },
-  );
+  const observer = new IntersectionObserver((entries) => {
+    if (!entries.some((entry) => entry.isIntersecting)) return;
+    observer.disconnect();
+    callback();
+  }, options);
+
+  observer.observe(element);
 }
 
-async function loadContent() {
-  try {
-    const response = await fetch("/content/site.json", { cache: "no-store" });
-    if (!response.ok) throw new Error(`Content request failed: ${response.status}`);
-    applyContent({ ...fallbackContent, ...(await response.json()) });
-  } catch (error) {
-    console.warn("Using the built-in site copy because CMS content could not be loaded.", error);
-    applyContent(fallbackContent);
-  }
-  observeReveals();
+const contactDetails = document.querySelector(".contact-details");
+const comingSoon = document.querySelector(".coming-soon");
+const comingSoonText = comingSoon?.querySelector(".typed-text");
+let contactTyping = null;
+
+function ensureContactTyping() {
+  if (!contactTyping) contactTyping = typeContactDetails();
+  return contactTyping;
 }
 
-document.getElementById("current-year").textContent = new Date().getFullYear();
+prepareTypedText();
 revealLogoDot();
-loadContent();
+
+observeOnce(
+  contactDetails,
+  () => {
+    ensureContactTyping();
+  },
+  { threshold: 0.45 },
+);
+
+observeOnce(
+  comingSoon,
+  async () => {
+    await ensureContactTyping();
+    await delay(180);
+    await typeText(comingSoonText, 105);
+  },
+  { threshold: 0.65 },
+);

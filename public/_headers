@@ -5,11 +5,11 @@
 /styles.css
   Cache-Control: public, max-age=31536000, immutable
 
-/assets/*
+/script.js
   Cache-Control: public, max-age=31536000, immutable
 
-/content/*
-  Cache-Control: no-cache
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
 
 /*
   X-Content-Type-Options: nosniff
