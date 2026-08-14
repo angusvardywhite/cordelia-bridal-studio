@@ -119,12 +119,18 @@ body::before {
 }
 
 .brand-subtitle {
+  display: flex;
+  justify-content: center;
   min-height: 1.6em;
   margin-top: clamp(0.2rem, 0.75vw, 0.65rem);
-  font-size: clamp(1rem, 2.2vw, 1.9rem);
+  font-size: 1.9rem;
   line-height: 1.2;
   letter-spacing: 0.16em;
   text-align: center;
+}
+
+.brand-subtitle .typed-text {
+  flex: 0 0 auto;
 }
 
 .details {
@@ -248,7 +254,6 @@ body::before {
 
   .brand-subtitle {
     margin-top: 0.3rem;
-    font-size: clamp(0.95rem, 4.65vw, 1.2rem);
   }
 
   .details {
