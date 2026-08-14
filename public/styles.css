@@ -138,7 +138,7 @@ body::before {
   row-gap: clamp(3rem, 5.7vw, 5.25rem);
   width: min(100%, 31rem);
   margin-left: clamp(0rem, 5vw, 6rem);
-  font-size: clamp(0.82rem, 1.65vw, 1.35rem);
+  font-size: clamp(0.95rem, 1.9vw, 1.55rem);
   line-height: 1.45;
   letter-spacing: 0.16em;
 }
@@ -152,7 +152,7 @@ body::before {
 
 .telephone {
   min-height: 1.45em;
-  word-spacing: clamp(0.45rem, 1.65vw, 1.4rem);
+  word-spacing: clamp(0.35rem, 1.35vw, 1.15rem);
   white-space: nowrap;
 }
 
@@ -235,11 +235,11 @@ body::before {
     row-gap: clamp(2.75rem, 10vw, 4rem);
     width: 100%;
     margin-left: 0;
-    font-size: clamp(0.78rem, 3.7vw, 1rem);
+    font-size: clamp(0.88rem, 4.2vw, 1.1rem);
   }
 
   .telephone {
-    word-spacing: clamp(0.5rem, 3.5vw, 0.9rem);
+    word-spacing: clamp(0.4rem, 3vw, 0.75rem);
   }
 
   .coming-soon {
