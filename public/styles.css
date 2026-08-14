@@ -25,15 +25,20 @@ body {
 }
 
 body::before {
-  position: fixed;
+  position: absolute;
   inset: 0;
-  z-index: -1;
+  z-index: 0;
   pointer-events: none;
   content: "";
   opacity: 0.34;
   background-image: url("/assets/textures/paper-fibres.webp");
   background-size: 57.6rem 38.4rem;
   mix-blend-mode: multiply;
+}
+
+body > main {
+  position: relative;
+  z-index: 1;
 }
 
 .skip-link {
