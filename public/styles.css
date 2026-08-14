@@ -11,6 +11,7 @@
 
 html {
   scroll-behavior: smooth;
+  background-color: var(--paper);
 }
 
 body {
@@ -26,7 +27,10 @@ body {
 
 body::before {
   position: fixed;
-  inset: 0;
+  top: calc(-1 * env(safe-area-inset-top, 0px));
+  right: calc(-1 * env(safe-area-inset-right, 0px));
+  bottom: calc(-1 * env(safe-area-inset-bottom, 0px));
+  left: calc(-1 * env(safe-area-inset-left, 0px));
   z-index: -1;
   pointer-events: none;
   content: "";
@@ -38,8 +42,8 @@ body::before {
 
 .skip-link {
   position: fixed;
-  top: 0.75rem;
-  left: 0.75rem;
+  top: max(0.75rem, env(safe-area-inset-top, 0px));
+  left: max(0.75rem, env(safe-area-inset-left, 0px));
   z-index: 10;
   width: 1px;
   height: 1px;
@@ -84,13 +88,16 @@ body::before {
 .details {
   position: relative;
   min-height: 100svh;
-  padding: var(--page-pad);
+  padding-top: max(var(--page-pad), env(safe-area-inset-top, 0px));
+  padding-right: max(var(--page-pad), env(safe-area-inset-right, 0px));
+  padding-bottom: max(var(--page-pad), env(safe-area-inset-bottom, 0px));
+  padding-left: max(var(--page-pad), env(safe-area-inset-left, 0px));
 }
 
 .brand-lockup {
   position: absolute;
-  right: var(--page-pad);
-  bottom: clamp(2.5rem, 7svh, 6rem);
+  right: max(var(--page-pad), env(safe-area-inset-right, 0px));
+  bottom: max(clamp(2.5rem, 7svh, 6rem), env(safe-area-inset-bottom, 0px));
   container-type: inline-size;
   width: clamp(18rem, 35vw, 34rem);
 }
@@ -264,7 +271,7 @@ body::before {
 @media (max-width: 700px) {
   .brand-lockup {
     right: auto;
-    bottom: clamp(2rem, 5svh, 3.5rem);
+    bottom: max(clamp(2rem, 5svh, 3.5rem), env(safe-area-inset-bottom, 0px));
     left: 50%;
     width: min(78vw, 29rem);
     transform: translateX(-50%);
