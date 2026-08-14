@@ -12,8 +12,9 @@ Scrolling reveals the Chester appointment details, telephone number and final â€
 in sequence.
 
 The CMS, previous copy and uploaded photography are intentionally absent from this temporary
-version. A top-level `404.html` also ensures old paths, including `/admin/`, return a not-found page
-instead of falling back to the homepage.
+version. A top-level `404.html` ensures old paths return a not-found page instead of falling back to
+the homepage. Temporary redirect rules explicitly send `/admin` and everything beneath it to that
+not-found response.
 
 ## Complete-site archive
 

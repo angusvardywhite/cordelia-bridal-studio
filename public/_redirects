@@ -1,0 +1,2 @@
+/admin /not-found 302
+/admin/* /not-found 302
