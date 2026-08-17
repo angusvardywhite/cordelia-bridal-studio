@@ -100,7 +100,8 @@ async function typeContactDetails() {
   const lines = document.querySelectorAll(".contact-details .typed-text");
 
   for (const line of lines) {
-    await typeText(line, 68);
+    const speed = line.closest(".email") ? 68 / 1.5 : 68;
+    await typeText(line, speed);
     await delay(95);
   }
 }
