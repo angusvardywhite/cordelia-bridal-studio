@@ -18,11 +18,11 @@ async function typeText(element, speed = 82) {
 
   const text = element.dataset.typeText || output.textContent || "";
 
-  if (element.closest(".telephone")) {
-    const characters = text.split(/\s+/).filter(Boolean);
+  if (element.closest(".spread-contact")) {
+    const characters = Array.from(text.replace(/\s+/g, ""));
     const spans = characters.map((character) => {
       const span = document.createElement("span");
-      span.className = "phone-character";
+      span.className = "contact-character";
       span.textContent = character;
       span.style.visibility = "hidden";
       return span;

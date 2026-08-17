@@ -8,8 +8,8 @@ directly.
 
 The coming-soon page keeps the established pale-blue paper background, typography and animated
 Cordelia signature. After the signature finishes drawing, “Bridal Studio” types beneath it.
-Scrolling reveals the Chester appointment details, telephone number and final “Coming Soon...” line
-in sequence.
+Scrolling reveals the Chester appointment details, telephone number, email address and final
+“Coming Soon...” line in sequence.
 
 The CMS, previous copy and uploaded photography are intentionally absent from this temporary
 version. A top-level `404.html` ensures old paths return a not-found page instead of falling back to

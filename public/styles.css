@@ -179,30 +179,36 @@ body > main {
   min-height: 1.45em;
 }
 
-.telephone {
+.telephone,
+.email {
   min-height: 1.45em;
   white-space: nowrap;
 }
 
-.telephone-link {
+.telephone-link,
+.email-link {
   display: block;
   width: 100%;
   color: inherit;
   text-decoration: none;
 }
 
-.telephone .typed-text,
-.telephone .typed-output {
+.spread-contact .typed-text,
+.spread-contact .typed-output {
   width: 100%;
 }
 
-.telephone .typed-output {
-  display: grid;
-  grid-template-columns: repeat(11, max-content);
+.spread-contact .typed-output {
+  display: flex;
   justify-content: space-between;
 }
 
-.phone-character.is-typing::after {
+.email .typed-text::before,
+.email .typed-output {
+  letter-spacing: 0;
+}
+
+.contact-character.is-typing::after {
   display: inline-block;
   width: 1px;
   height: 0.86em;
@@ -291,6 +297,10 @@ body > main {
     width: 100%;
     margin-left: 0;
     font-size: clamp(1rem, 4.8vw, 1.265rem);
+  }
+
+  .email {
+    font-size: clamp(0.75rem, 3.8vw, 1.265rem);
   }
 
   .coming-soon {
